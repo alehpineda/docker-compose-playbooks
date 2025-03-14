@@ -1,0 +1,112 @@
+2025-03-14T00:01:48-05:00 INF Traefik version 3.3.4 built on 2025-02-25T10:11:01Z version=3.3.4
+2025-03-14T00:01:48-05:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-14T00:01:48-05:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-14T00:01:48-05:00 INF Starting provider *file.Provider
+2025-03-14T00:01:48-05:00 INF Starting provider *traefik.Provider
+2025-03-14T00:01:48-05:00 INF Starting provider *tailscale.Provider
+2025-03-14T00:01:48-05:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-03-14T00:01:48-05:00 INF Starting provider *docker.Provider
+2025-03-14T00:02:58-05:00 INF I have to go...
+2025-03-14T00:02:58-05:00 INF Stopping server gracefully
+2025-03-14T00:02:58-05:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:02:58-05:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:02:58-05:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:02:58-05:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:02:59-05:00 INF Server stopped
+2025-03-14T00:02:59-05:00 INF Shutting down
+2025-03-14T00:03:37-05:00 INF Traefik version 3.3.4 built on 2025-02-25T10:11:01Z version=3.3.4
+2025-03-14T00:03:37-05:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-14T00:03:37-05:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-14T00:03:37-05:00 INF Starting provider *file.Provider
+2025-03-14T00:03:37-05:00 INF Starting provider *traefik.Provider
+2025-03-14T00:03:37-05:00 INF Starting provider *docker.Provider
+2025-03-14T00:03:37-05:00 INF Starting provider *tailscale.Provider
+2025-03-14T00:03:37-05:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-03-14T00:05:56-05:00 INF I have to go...
+2025-03-14T00:05:56-05:00 INF Stopping server gracefully
+2025-03-14T00:05:56-05:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:05:56-05:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:05:56-05:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:05:56-05:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:05:56-05:00 INF Server stopped
+2025-03-14T00:05:56-05:00 INF Shutting down
+2025-03-14T00:05:59-05:00 INF Traefik version 3.3.4 built on 2025-02-25T10:11:01Z version=3.3.4
+2025-03-14T00:05:59-05:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-14T00:05:59-05:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-14T00:05:59-05:00 INF Starting provider *file.Provider
+2025-03-14T00:05:59-05:00 INF Starting provider *traefik.Provider
+2025-03-14T00:05:59-05:00 INF Starting provider *tailscale.Provider
+2025-03-14T00:05:59-05:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-03-14T00:05:59-05:00 INF Starting provider *docker.Provider
+2025-03-14T00:07:57-05:00 INF I have to go...
+2025-03-14T00:07:57-05:00 INF Stopping server gracefully
+2025-03-14T00:07:57-05:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:07:57-05:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:07:57-05:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:07:57-05:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:07:57-05:00 INF Server stopped
+2025-03-14T00:07:57-05:00 INF Shutting down
+2025-03-14T00:08:00-05:00 INF Traefik version 3.3.4 built on 2025-02-25T10:11:01Z version=3.3.4
+2025-03-14T00:08:00-05:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-14T00:08:00-05:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-14T00:08:00-05:00 INF Starting provider *file.Provider
+2025-03-14T00:08:00-05:00 INF Starting provider *traefik.Provider
+2025-03-14T00:08:00-05:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-03-14T00:08:00-05:00 INF Starting provider *tailscale.Provider
+2025-03-14T00:08:00-05:00 INF Starting provider *docker.Provider
+2025-03-14T00:11:48-05:00 INF I have to go...
+2025-03-14T00:11:48-05:00 INF Stopping server gracefully
+2025-03-14T00:11:48-05:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:11:48-05:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:11:48-05:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:11:48-05:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:11:48-05:00 INF Server stopped
+2025-03-14T00:11:48-05:00 INF Shutting down
+2025-03-14T00:12:15-05:00 INF Traefik version 3.3.4 built on 2025-02-25T10:11:01Z version=3.3.4
+2025-03-14T00:12:15-05:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-14T00:12:15-05:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-14T00:12:15-05:00 INF Starting provider *file.Provider
+2025-03-14T00:12:15-05:00 INF Starting provider *traefik.Provider
+2025-03-14T00:12:15-05:00 INF Starting provider *docker.Provider
+2025-03-14T00:12:15-05:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-03-14T00:12:15-05:00 INF Starting provider *tailscale.Provider
+2025-03-14T00:17:13-05:00 INF I have to go...
+2025-03-14T00:17:13-05:00 INF Stopping server gracefully
+2025-03-14T00:17:13-05:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:17:13-05:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:17:13-05:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-03-14T00:17:13-05:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-03-14T00:17:14-05:00 INF Shutting down
+2025-03-14T00:17:14-05:00 INF Server stopped
+2025-03-14T00:19:47-05:00 INF Traefik version 3.3.4 built on 2025-02-25T10:11:01Z version=3.3.4
+2025-03-14T00:19:47-05:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-03-14T00:19:47-05:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-03-14T00:19:47-05:00 INF Starting provider *file.Provider
+2025-03-14T00:19:47-05:00 INF Starting provider *traefik.Provider
+2025-03-14T00:19:47-05:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-03-14T00:19:47-05:00 INF Starting provider *docker.Provider
+2025-03-14T00:19:47-05:00 INF Starting provider *tailscale.Provider

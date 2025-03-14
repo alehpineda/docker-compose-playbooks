@@ -1,0 +1,44 @@
+services:
+  traefik:
+    image: traefik:latest # or traefik:v3.3 to pin a version
+    container_name: traefik
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true # helps to increase security
+    env_file:
+      - .env # store other secrets e.g., dashboard password
+    networks:
+       proxy:
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      # echo $(htpasswd -nB admin) | sed -e s/\\$/\\$\\$/g 
+      # to generate a password
+      - TRAEFIK_DASHBOARD_CREDENTIALS=${TRAEFIK_DASHBOARD_CREDENTIALS}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock:ro
+      - /home/barbatos/Documents/github/docker-compose-playbooks/Traefikv3-Tailscale/config/traefik.yaml:/traefik.yaml:ro
+      - /home/barbatos/Documents/github/docker-compose-playbooks/Traefikv3-Tailscale/config/config.yaml:/config.yaml:ro
+      - /home/barbatos/Documents/github/docker-compose-playbooks/Traefikv3-Tailscale/config/logs:/var/log/traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.entrypoints=http"
+      - "traefik.http.routers.traefik.rule=Host(`barbatos.cockatoo-draconis.ts.net`) && PathPrefix(`/dashboard/`)"
+      - "traefik.http.routers.traefik.tls.certresolver=tailscale"      
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS}"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.rule=Host(`barbatos.cockatoo-draconis.ts.net`) && PathPrefix(`/dashboard/`)"
+      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=tailscale"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
+
+networks:
+  proxy:
+    external: true # or comment this line to auto create the network
