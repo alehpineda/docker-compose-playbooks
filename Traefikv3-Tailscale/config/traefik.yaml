@@ -5,13 +5,12 @@ api:
 entryPoints:
   http:
     address: ":80"
-    http:
-      redirections:
-        entrypoint:
-          to: https
-          scheme: https
+
   https:
     address: ":443"
+
+  metrics:
+    address: ":8082"
 
 serversTransport:
   insecureSkipVerify: true
@@ -22,6 +21,7 @@ providers:
     exposedByDefault: false
   file:
     filename: /config.yaml # example provided gives A+ rating https://www.ssllabs.com/ssltest/
+    watch: true
 
 certificatesResolvers:
   tailscale:
@@ -32,4 +32,11 @@ log:
 accessLog: {}
 
 metrics:
-  prometheus: {}
+  prometheus:
+    entryPoint: metrics
+    buckets:
+      - 0.1
+      - 0.3
+      - 1.2
+      - 5.0
+

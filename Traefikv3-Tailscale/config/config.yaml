@@ -17,22 +17,7 @@ http:
       redirectScheme:
         scheme: https
         permanent: true
-
-  routers:
-    portainer:
-      entryPoints:
-        - "https"
-      rule: "Host(`barbatos.cockatoo-draconis.ts.net`) && Path(`/portainer`)"
-      middlewares:
-        - default-security-headers
-        - https-redirectscheme
-      tls:
-        certResolver: tailscale
-      service: portainer
-
-  services:
-    portainer:
-      loadBalancer:
-        servers:
-          - url: "https://barbatos.cockatoo-draconis.ts.net:9443"
-        passHostHeader: true
+    portainer-stripprefix:
+      stripPrefix:
+        prefixes:
+          - "/portainer"

@@ -1,7 +1,7 @@
 services:
   traefik:
     image: traefik:latest # or traefik:v3.3 to pin a version
-    container_name: traefik
+    container_name: traefik-tailscale
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true # helps to increase security
@@ -12,6 +12,7 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 8080:8080
     environment:
       # echo $(htpasswd -nB admin) | sed -e s/\\$/\\$\\$/g 
       # to generate a password
@@ -25,14 +26,14 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
-      - "traefik.http.routers.traefik.rule=Host(`barbatos.cockatoo-draconis.ts.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`) || PathPrefix(`/metrics`))"
+      - "traefik.http.routers.traefik.rule=Host(`barbatos.cockatoo-draconis.ts.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))"
       - "traefik.http.routers.traefik.tls.certresolver=tailscale"      
       - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS}"
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
       - "traefik.http.routers.traefik-secure.entrypoints=https"
-      - "traefik.http.routers.traefik-secure.rule=Host(`barbatos.cockatoo-draconis.ts.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`) || PathPrefix(`/metrics`))"
+      - "traefik.http.routers.traefik-secure.rule=Host(`barbatos.cockatoo-draconis.ts.net`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))"
       - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=tailscale"

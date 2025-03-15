@@ -4,7 +4,7 @@ secrets:
 services:
   traefik:
     image: traefik:latest # or traefik:v3.3 to pin a version
-    container_name: traefik
+    container_name: traefik-cloudflare
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true # helps to increase security
@@ -13,7 +13,7 @@ services:
     env_file:
       - .env # store other secrets e.g., dashboard password
     networks:
-       proxy:
+       cloudflare:
     ports:
       - 80:80
       - 443:443
@@ -35,20 +35,20 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
-      - "traefik.http.routers.traefik.rule=Host(`traefik-docker.jimsgarage.co.uk`)"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.alehpineda.com`)"
       - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS}"
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
       - "traefik.http.routers.traefik-secure.entrypoints=https"
-      - "traefik.http.routers.traefik-secure.rule=Host(`traefik-docker.jimsgarage.co.uk`)"
+      - "traefik.http.routers.traefik-secure.rule=Host(`traefik.alehpineda.com`)"
       - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
-      - "traefik.http.routers.traefik-secure.tls.domains[0].main=jimsgarage.co.uk"
-      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.jimsgarage.co.uk"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].main=alehpineda.com"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.alehpineda.com"
       - "traefik.http.routers.traefik-secure.service=api@internal"
 
 networks:
-  proxy:
+  cloudflare:
     external: true # or comment this line to auto create the network
